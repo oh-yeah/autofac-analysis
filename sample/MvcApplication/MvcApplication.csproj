@@ -6,11 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="autofac.extensions.dependencyinjection" Version="4.3.1" />
-    <PackageReference Include="serilog.aspnetcore" Version="2.1.1" />
-    <PackageReference Include="serilog.sinks.console" Version="3.1.1" />
-    <PackageReference Include="serilog.sinks.seq" Version="4.0.0" />
+    <PackageReference Include="autofac.extensions.dependencyinjection" Version="6.0.0" />
+    <PackageReference Include="serilog.aspnetcore" Version="3.4.0" />
+    <PackageReference Include="serilog.sinks.console" Version="4.0.0" />
+    <PackageReference Include="serilog.sinks.seq" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>

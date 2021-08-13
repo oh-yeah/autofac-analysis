@@ -7,6 +7,7 @@ using Autofac.Analysis.Transport.Connector;
 using Autofac.Analysis.Transport.Messages;
 using Autofac.Analysis.Transport.Model;
 using Autofac.Core;
+using Autofac.Core.Registration;
 using Autofac.Core.Resolving;
 using Serilog;
 
@@ -53,15 +54,16 @@ namespace Autofac.Analysis
             Send(new ProfilerConnectedMessage(processInfo.MainModule.FileName, processInfo.Id));
         }
 
-        protected override void AttachToComponentRegistration(IComponentRegistry componentRegistry, IComponentRegistration registration)
-        {
+
+        protected override void AttachToComponentRegistration(IComponentRegistryBuilder componentRegistry, IComponentRegistration registration)
+        { 
             base.AttachToComponentRegistration(componentRegistry, registration);
             
             var message = new ComponentAddedMessage(ModelMapper.GetComponentModel(registration));            
             Send(message);
         }
 
-        protected override void AttachToRegistrationSource(IComponentRegistry componentRegistry, IRegistrationSource registrationSource)
+        protected override void AttachToRegistrationSource(IComponentRegistryBuilder componentRegistry, IRegistrationSource registrationSource)
         {
             base.AttachToRegistrationSource(componentRegistry, registrationSource);
 
